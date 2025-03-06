@@ -6,3 +6,6 @@ def get_sp500_tickers():
     table = pd.read_html(url)
     sp500_tickers = table[0]["Symbol"].tolist()
     return sp500_tickers
+def fetch_stock_data(ticker):
+    stock = yf.Ticker(ticker)
+    return stock.history(period="1y")
