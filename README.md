@@ -32,7 +32,7 @@ stock_price_prediction/
 ## 🛠 Installation
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-repo/stock-price-prediction.git
+git clone https://github.com/Padmanabhannm18/stock-price-prediction.git
 cd stock-price-prediction
 ```
 
