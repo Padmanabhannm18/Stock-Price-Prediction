@@ -11,9 +11,6 @@ ticker = st.sidebar.selectbox("Select a Stock Ticker", sp500_tickers)
 if st.sidebar.button("Fetch Data"):
     st.write(f"Selected Stock: {stock_ticker}")
     data = fetch_stock_data(ticker)
-    stock = yf.Ticker(ticker)
-    return stock.history(period="1y")
-
     if not data.empty:
         st.write(f"### {ticker} Stock Price Data (Last 30 Days)")
         st.line_chart(data['Close'])
