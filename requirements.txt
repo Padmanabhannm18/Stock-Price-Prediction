@@ -15,7 +15,6 @@ jsonschema==4.23.0
 jsonschema-specifications==2024.10.1
 MarkupSafe==3.0.2
 narwhals==1.29.0
-numpy==2.2.3
 packaging==24.2
 pandas==2.2.3
 pillow==11.1.0
@@ -31,7 +30,12 @@ scikit-learn==1.6.1
 scipy==1.15.2
 six==1.17.0
 smmap==5.0.2
-streamlit==1.43.0
+streamlit==1.30.0
+yfinance==0.2.36
+pandas==2.2.0
+numpy==1.26.4
+scikit-learn==1.4.1.post1
+matplotlib==3.8.2
 tenacity==9.0.0
 threadpoolctl==3.5.0
 toml==0.10.2
