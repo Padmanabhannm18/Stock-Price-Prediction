@@ -1,5 +1,5 @@
 import streamlit as st
-from data_fetch import get_sp500_tickers
+from data_fetch import get_sp500_tickers,fetch_stock_data
 from model import train_model, make_prediction
 st.title("📈 Real-Time Stock Price Prediction")
 
