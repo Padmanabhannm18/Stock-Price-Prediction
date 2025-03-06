@@ -14,7 +14,7 @@ if st.sidebar.button("Fetch Data"):
     if not data.empty:
         st.write(f"### {ticker} Stock Price Data (Last 1 year)")
         st.line_chart(data['Close'])
-        st.dataframe(data['Close'])
+        st.dataframe(data)
     else:
         st.error("Failed to fetch data. Please check the stock ticker.")
 
