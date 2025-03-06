@@ -12,7 +12,7 @@ if st.sidebar.button("Fetch Data"):
     st.write(f"Selected Stock: {ticker}")
     data = fetch_stock_data(ticker)
     if not data.empty:
-        st.write(f"### {ticker} Stock Price Data (Last 30 Days)")
+        st.write(f"### {ticker} Stock Price Data (Last 1 year)")
         st.line_chart(data['Close'])
     else:
         st.error("Failed to fetch data. Please check the stock ticker.")
