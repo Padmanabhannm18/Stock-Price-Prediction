@@ -9,7 +9,7 @@ sp500_tickers = get_sp500_tickers()
 ticker = st.sidebar.selectbox("Select a Stock Ticker", sp500_tickers)
 
 if st.sidebar.button("Fetch Data"):
-    st.write(f"Selected Stock: {stock_ticker}")
+    st.write(f"Selected Stock: {ticker}")
     data = fetch_stock_data(ticker)
     if not data.empty:
         st.write(f"### {ticker} Stock Price Data (Last 30 Days)")
