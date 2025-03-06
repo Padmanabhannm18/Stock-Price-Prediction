@@ -1,12 +1,15 @@
 import streamlit as st
-from data_fetch import get_realtime_stock_data
+from data_fetch import get_sp500_tickers
 from model import train_model, make_prediction
 st.title("📈 Real-Time Stock Price Prediction")
 
-st.sidebar.header("Stock Selection")
-ticker = st.sidebar.text_input("Enter Stock Ticker (e.g., AAPL, TSLA):", "AAPL")
+sp500_tickers = get_sp500_tickers()
+
+# Replace text input with a dropdown menu
+stock_ticker = st.sidebar.selectbox("Select a Stock Ticker", sp500_tickers)
 
 if st.sidebar.button("Fetch Data"):
+    st.write(f"Selected Stock: {stock_ticker}")
     data = get_realtime_stock_data(ticker)
     if not data.empty:
         st.write(f"### {ticker} Stock Price Data (Last 30 Days)")
