@@ -6,11 +6,14 @@ st.title("📈 Real-Time Stock Price Prediction")
 sp500_tickers = get_sp500_tickers()
 
 # Replace text input with a dropdown menu
-stock_ticker = st.sidebar.selectbox("Select a Stock Ticker", sp500_tickers)
+ticker = st.sidebar.selectbox("Select a Stock Ticker", sp500_tickers)
 
 if st.sidebar.button("Fetch Data"):
     st.write(f"Selected Stock: {stock_ticker}")
-    data = get_realtime_stock_data(ticker)
+    data = fetch_stock_data(ticker)
+    stock = yf.Ticker(ticker)
+    return stock.history(period="1y")
+
     if not data.empty:
         st.write(f"### {ticker} Stock Price Data (Last 30 Days)")
         st.line_chart(data['Close'])
@@ -18,7 +21,7 @@ if st.sidebar.button("Fetch Data"):
         st.error("Failed to fetch data. Please check the stock ticker.")
 
 if st.sidebar.button("Train & Predict"):
-    data = get_realtime_stock_data(ticker)
+    data = fetch_stock_data(ticker)
     if not data.empty:
         model, scaler = train_model(data)
         prediction = make_prediction(model, scaler, data)
