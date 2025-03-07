@@ -7,7 +7,7 @@ This project is a **Real-Time Stock Price Prediction System** that leverages **m
 ## 🎮 Project Structure
 
 ```
-realtime_stock_prediction/
+Stock-Price-Prediction/
 │── main.py                  # Main Streamlit UI
 │── data_fetch.py             # Fetch real-time stock data
 │── model_training.py         # Train and evaluate machine learning models
