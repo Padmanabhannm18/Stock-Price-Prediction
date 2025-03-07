@@ -21,7 +21,7 @@ realtime_stock_prediction/
 ### 1️⃣ Clone the Repository
 
 ```sh
-git clone https://github.com/Padmanabhannm1/Stock-Price-Prediction.git
+git clone https://github.com/Padmanabhannm18/Stock-Price-Prediction.git
 cd Stock-Price-Prediction
 ```
 
