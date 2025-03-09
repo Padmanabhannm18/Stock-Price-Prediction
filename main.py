@@ -14,7 +14,6 @@ if st.sidebar.button("Train & Predict"):
     if not data.empty:
         st.write(f"### {ticker} Stock Price Data (Last 1 year)")
         st.line_chart(data['Close'])
-        st.dataframe(data)
         model, scaler = train_model(data)
         prediction = make_prediction(model, scaler, data)
         st.write(f"### Predicted Next Closing Price for {ticker}: **${prediction:.2f}**")
