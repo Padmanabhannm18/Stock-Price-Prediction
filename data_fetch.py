@@ -13,8 +13,8 @@ def fetch_stock_data(ticker):
 
     if not history.empty:
         last_updated = history.index[-1].strftime("%Y-%m-%d")
-        print(f"Last updated date for {ticker}: {last_updated}")
+        st.write(f"Last updated date for {ticker}: {last_updated}")
     else:
-        print(f"No data available for {ticker}")
+        st.write(f"No data available for {ticker}")
 
     return history
