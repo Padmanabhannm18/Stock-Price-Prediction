@@ -11,10 +11,14 @@ def fetch_stock_data(ticker):
     stock = yf.Ticker(ticker)
     history = stock.history(period="1y")
 
+    # Get company name
+    company_name = stock.info.get("longName", "Unknown Company")
+
     if not history.empty:
         last_updated = history.index[-1].strftime("%Y-%m-%d")
-        st.write(f"Last updated date for {ticker}: {last_updated}")
+        st.write(f"Company: {company_name} ({ticker})")
+        st.write(f"Last updated date: {last_updated}")
     else:
-        st.write(f"No data available for {ticker}")
+        st.write(f"No data available for {company_name} ({ticker})")
 
     return history
