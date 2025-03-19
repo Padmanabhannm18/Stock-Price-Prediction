@@ -7,7 +7,7 @@ st.title("📈 Real-Time Stock Price Prediction")
 sp500_tickers = get_sp500_tickers()
 
 # Replace text input with a dropdown menu
-ticker = st.sidebar.selectbox("Select a Stock Ticker", sp500_tickers)
+ticker = st.selectbox("Select a Stock Ticker", sp500_tickers)
 if st.sidebar.button("Train & Predict"):
     st.write(f"Selected Stock: {ticker}")
     data = fetch_stock_data(ticker)
