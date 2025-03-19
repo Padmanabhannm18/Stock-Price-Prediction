@@ -8,7 +8,7 @@ sp500_tickers = get_sp500_tickers()
 
 # Replace text input with a dropdown menu
 ticker = st.selectbox("Select a Stock Ticker", sp500_tickers)
-if st.sidebar.button("Train & Predict"):
+if st.button("Train & Predict"):
     st.write(f"Selected Stock: {ticker}")
     data = fetch_stock_data(ticker)
     if not data.empty:
